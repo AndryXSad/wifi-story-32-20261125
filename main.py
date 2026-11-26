@@ -23,7 +23,8 @@ NAME = "She left. The Wi-Fi stayed."
 
 
 def main() -> None:
-    # Fail loudly instead of writing a text the gate would refuse:
+    # Self-check mirrors the kit's entry gate exactly, so a bad name fails
+    # here (loudly, before any file is written) instead of failing grading:
     # UTF-8, 1-32 characters, not only white space.
     if not 1 <= len(NAME) <= 32:
         raise ValueError("entry must be 1-32 characters")
